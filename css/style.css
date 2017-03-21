@@ -60,3 +60,13 @@
 		margin-top: -19px;
 		margin-left: 270px
 	}
+	.addInput{
+		border: 1px solid black;
+		margin-left: 355px;
+		margin-top: 37px;
+		padding: 10px;
+		width: 300px;
+	}
+	.addAge, .addPoints{
+		width:166px;
+	}
