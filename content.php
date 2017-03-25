@@ -2,6 +2,7 @@
 <link rel="Stylesheet" type="text/css" href="css/style.css"/> 
 <?php
 include('config.php');
+include('functions.php');
 /*
 X 	?show 	0 records - no results
 X 	?show 	1-10 records - 1-10 pos
@@ -12,105 +13,28 @@ V 	?modify&id= - modify form
 V 	?delete&id= - delete record 
 */
 
+if($_GET == NULL){
+	defaults();
+}
+
+if(isset($_GET['show'])){
+//SHOW//
+
+}
+
 if(isset($_GET['delete'])){
-//DELETE//
-	$id = $_GET['id'];
-	$query = mysql_query("DELETE FROM jumpers WHERE id = ".$id);
-	header("Location: index.php");
+	delete($_GET['id']);
 }
+
 if(isset($_GET['modify'])){
-//MODIFY//	
-	$id = $_GET['id'];
-	$query = mysql_query("SELECT * FROM jumpers WHERE id = ".$id);
-	while($r = mysql_fetch_assoc($query)){
-		$name = $r['name'];
-		$nationality = $r['nationality'];
-		$age = $r['age'];
-		$points = $r['points'];
-	}
-?>
-
-
-	<div class="addInput">
-		<div class="input-margin">
-			<input type="text" class="name" value="<?php=$name;?>"> Name<br>
-		</div>
-		<div class="input-margin">
-			<input type="text" class="nationality" value="<?php=$nationality;?>"> Nationality<br>
-		</div>
-		<div class="input-margin">
-			<input type="number" class="addAge" value="<?php=$age;?>"> Age<br>
-		</div>
-		<div class="input-margin">
-			<input type="number" class="addPoints" value="<?php=$points;?>"> Points<br>
-		</div>
-		<div class="input-margin">
-			<button style="width:100%">Modify jumper</button>
-		</div>
-	</div>
-
-
-
-<?php
-}
+	modify($_GET['id']);
+}	
+	
 if(isset($_GET['add'])){
-?>	
-	
-	
-	<div class="addInput">
-		<div class="input-margin">
-			<input type="text" class="name"> Name<br>
-		</div>
-		<div class="input-margin">
-			<input type="text" class="nationality"> Nationality<br>
-		</div>
-		<div class="input-margin">
-			<input type="number" class="addAge"> Age<br>
-		</div>
-		<div class="input-margin">
-			<input type="number" class="addPoints"> Points<br>
-		</div>
-		<div class="input-margin">
-			<button style="width:100%">Add jumper</button>
-		</div>
-	</div>
-
-
-<?php
+	add();
 }
 if(isset($_GET['details'])){
-	echo "details";
+	show_details($_GET['id']);
 }
 
 ?>
-<!--<table class="jumpersTable">
-	<tr>
-		<td>Position</td>
-		<td>Name&nbsp;&nbsp;&nbsp;&nbsp;
-			<div class="triangleUpToDown"></div>
-			<div class="triangleDownToUp"></div>
-		</td>
-		<td>Nationality</td>
-		<td>Points</td>
-		<td>Action</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Stoch Kamil</td>
-		<td>Poland</td>
-		<td>1595</td>
-		<td>Modify | Delete</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Kraft Stefan</td>
-		<td>Austria</td>
-		<td>1524</td>
-		<td>Modify | Delete</td>
-	</tr>
-</table>
-<div class="enumerate">
-	<div class="trianglePrevious"></div>
-	<div style="width:100px;float:left;border: 1px solid transparent;"></div>
-	<div class="triangleNext"></div>
-</div>-->

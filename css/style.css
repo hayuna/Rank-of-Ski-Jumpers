@@ -14,7 +14,7 @@
 	td {border: 1px solid black;text-align: center;}
 	table tr td:nth-child(1) {width:50px;}
 	table tr td:nth-child(2) {width:320px;}
-	table tr td:nth-child(3) {width:320px;}
+	table tr td:nth-child(3) {width:254px;}
 	table tr td:nth-child(4) {width:122px;}
 	table{margin:20px;}
 	.filter{text-align: center;}
@@ -60,13 +60,13 @@
 		margin-top: -19px;
 		margin-left: 270px
 	}
-	.addInput{
+	.addInput, .modifyInput{
 		border: 1px solid black;
 		margin-left: 355px;
 		margin-top: 37px;
 		padding: 10px;
 		width: 300px;
 	}
-	.addAge, .addPoints{
+	.addAge, .modifyAge, .addPoints, .modifyPoints{
 		width:166px;
 	}

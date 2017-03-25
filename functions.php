@@ -1,0 +1,102 @@
+<?php
+function delete($id){
+	$query = mysql_query("DELETE FROM jumpers WHERE id = ".$id);
+	header("Location: index.php");
+}	
+
+function modify($id){
+	$query = mysql_query("SELECT * FROM jumpers WHERE id = ".$id);
+	while($r = mysql_fetch_assoc($query)){
+		$name = $r['name'];
+		$nationality = $r['nationality'];
+		$age = $r['age'];
+		$points = $r['points'];
+	}
+	echo '
+	<div class="modifyInput">
+		<div class="input-margin">
+			<input class="hideid" type="hidden" value="'.$id.'">
+			<input class="name" value="'.$name.'"> Name<br>
+		</div>
+		<div class="input-margin">
+			<input class="nationality" value="'.$nationality.'"> Nationality<br>
+		</div>
+		<div class="input-margin">
+			<input type="number" class="modifyAge" value="'.$age.'"> Age<br>
+		</div>
+		<div class="input-margin">
+			<input type="number" class="modifyPoints" value="'.$points.'"> Points<br>
+		</div>
+		<div class="input-margin">
+			<button class="modify_jumper_submit" style="width:100%">Modify jumper</button>
+		</div>
+	</div>
+	';
+}
+
+
+
+function add(){
+	echo '
+	<div class="addInput">
+		<div class="input-margin">
+			<input type="text" class="name"> Name<br>
+		</div>
+		<div class="input-margin">
+			<input type="text" class="nationality"> Nationality<br>
+		</div>
+		<div class="input-margin">
+			<input type="number" class="addAge"> Age<br>
+		</div>
+		<div class="input-margin">
+			<input type="number" class="addPoints"> Points<br>
+		</div>
+		<div class="input-margin">
+			<button class="add_jumper_submit" style="width:100%">Add jumper</button>
+		</div>
+	</div>
+	';
+}	
+
+function show_details($id){
+	echo "show_details";
+}
+
+function defaults(){
+	$query = mysql_query("SELECT * FROM jumpers ORDER BY points DESC LIMIT 10");
+	echo '
+	<table class="jumpersTable">
+		<tr>
+			<td>Position</td>
+			<td>Name</td>
+			<td>Nationality</td>
+			<td>Age</td>
+			<td>Points</td>
+			<td>Action</td>
+		</tr>
+	';
+	$counter = 0;
+	while($r = mysql_fetch_assoc($query)){
+		$id = $r['id'];
+		$name = $r['name'];
+		$nationality = $r['nationality'];
+		$age = $r['age'];
+		$points = $r['points'];
+		$counter++;
+		echo '
+			<tr>
+				<td>'.$counter.'</td>
+				<td>'.$name.'</td>
+				<td>'.$nationality.'</td>
+				<td>'.$age.'</td>
+				<td>'.$points.'</td>
+				<td><a href="?modify&id='.$id.'">Modify</a> | <a href="?delete&id='.$id.'">Delete</a></td>
+			</tr>
+		';
+	}
+	echo '
+	</table>
+	';
+
+}
+?>
