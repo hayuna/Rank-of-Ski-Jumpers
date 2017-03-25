@@ -1,7 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-
-
-
 <br>
 <div class="filter">filter results</div><hr>
 	<div class="input-margin">
@@ -20,9 +16,3 @@
 	<hr>
 	<button style="font-size: 20px;width: 100%;" class="addButton">Add jumpers</button>
 </div>
-
-<script>
-	$('.addButton').click(function(){
-		location.replace("?add");
-	});
-</script>

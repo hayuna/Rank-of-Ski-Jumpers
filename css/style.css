@@ -5,7 +5,7 @@
 	#left{width:312px;}
 	#content{width:1020px;}
 	#footer{clear:both;height:50px;}
-	.logo{width: 120px;height: 38px;margin-top: 5px;margin-left: 5px;}
+	.back, .logo{width: 120px;height: 38px;margin-top: 5px;margin-left: 5px;}
 	.title{width: 400px;height: 38px;position: relative;top: -40px;left: 30%;}
 	.title span{text-align: center;position: relative;top: 30%;left: 20%;}
 	#left {text-align: left;}
@@ -19,6 +19,12 @@
 	table{margin:20px;}
 	.filter{text-align: center;}
 	.input-margin{margin-top:20px;}
+	.details-margin{margin-top: 19px;border: 0;}
+	.details-body{width:500px;margin-left: 255px;margin-top: 70px;padding: 10px;}
+	.info{margin-left: 160px;border: 0;}
+	.details-margin:nth-child(1){margin-top:10px;}
+	.details-margin:nth-child(4){margin-bottom:10px;}
+	.back{background: url('../img/back.png');}
 	#left div, .enumerate {border: 0}
 	.triangleUpToDown, .triangleDownToUp{
 		width: 0;

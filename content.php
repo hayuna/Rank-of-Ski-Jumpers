@@ -14,7 +14,7 @@ V 	?delete&id= - delete record
 */
 
 if($_GET == NULL){
-	defaults();
+	show();
 }
 
 if(isset($_GET['show'])){
