@@ -3,21 +3,23 @@
 <?php
 include('config.php');
 /*
-?show 	0 records - no results
-?show 	1-10 records - 1-10 pos
-?show 	>10 - pages
-?details&id= - show details about jumper
-?add - add form
-?modify&id= - modify form
-?delete&id= - delete record 
+X 	?show 	0 records - no results
+X 	?show 	1-10 records - 1-10 pos
+X 	?show 	>10 - pages
+X 	?details&id= - show details about jumper
+V 	?add - add form
+V 	?modify&id= - modify form
+V 	?delete&id= - delete record 
 */
 
 if(isset($_GET['delete'])){
+//DELETE//
 	$id = $_GET['id'];
 	$query = mysql_query("DELETE FROM jumpers WHERE id = ".$id);
 	header("Location: index.php");
 }
 if(isset($_GET['modify'])){
+//MODIFY//	
 	$id = $_GET['id'];
 	$query = mysql_query("SELECT * FROM jumpers WHERE id = ".$id);
 	while($r = mysql_fetch_assoc($query)){
@@ -31,16 +33,16 @@ if(isset($_GET['modify'])){
 
 	<div class="addInput">
 		<div class="input-margin">
-			<input type="text" class="name" value="<?php echo $name; ?>"> Name<br>
+			<input type="text" class="name" value="<?php=$name;?>"> Name<br>
 		</div>
 		<div class="input-margin">
-			<input type="text" class="nationality" value="<?php echo $nationality; ?>"> Nationality<br>
+			<input type="text" class="nationality" value="<?php=$nationality;?>"> Nationality<br>
 		</div>
 		<div class="input-margin">
-			<input type="number" class="addAge" value="<?php echo $age; ?>"> Age<br>
+			<input type="number" class="addAge" value="<?php=$age;?>"> Age<br>
 		</div>
 		<div class="input-margin">
-			<input type="number" class="addPoints" value="<?php echo $points; ?>"> Points<br>
+			<input type="number" class="addPoints" value="<?php=$points;?>"> Points<br>
 		</div>
 		<div class="input-margin">
 			<button style="width:100%">Modify jumper</button>
