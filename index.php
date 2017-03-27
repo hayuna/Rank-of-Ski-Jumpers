@@ -59,6 +59,33 @@
 		$('.back').click(function(){
 			location.replace("index.php");
 		});
+		$('.filterName, .filterNationality, .filterAgeFrom, .filterAgeTo, .filterPointsFrom, .filterPointsTo').on('keyup', function(){
+			var name = $('.filterName').val();
+			var nationality = $('.filterNationality').val();
+			var ageFrom = $('.filterAgeFrom').val();
+			var ageTo = $('.filterAgeTo').val();
+			var pointsFrom = $('.filterPointsFrom').val();
+			var pointsTo = $('.filterPointsTo').val();
+        	$.ajax({
+	            type: "GET",
+	            url: "ajax_show.php",
+	            data: {
+	            	'name':name,
+	            	'nationality':nationality,
+	            	'ageFrom':ageFrom,
+	            	'ageTo':ageTo,
+	            	'pointsFrom':pointsFrom,
+	            	'pointsTo':pointsTo
+	            },
+	            dataType: "html",
+	            success: function(msg){
+	              $('#content').html(msg);
+	            },
+	            error: function(msg){
+	              console.log(msg);
+	            }
+            });
+    	});
 	});
 </script>
 <div id="container">

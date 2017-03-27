@@ -1,13 +1,13 @@
 
-<link rel="Stylesheet" type="text/css" href="css/style.css"/> 
+
 <?php
 include('config.php');
 include('functions.php');
 /*
-X 	?show 	0 records - no results
-X 	?show 	1-10 records - 1-10 pos
-X 	?show 	>10 - pages
-X 	?details&id= - show details about jumper
+V 	?show 	0 records - no results
+V 	?show 	1-10 records - 1-10 pos
+V 	?show 	>10 - pages
+V 	?details&id= - show details about jumper
 V 	?add - add form
 V 	?modify&id= - modify form
 V 	?delete&id= - delete record 
@@ -18,8 +18,7 @@ if($_GET == NULL){
 }
 
 if(isset($_GET['show'])){
-//SHOW//
-
+	show();
 }
 
 if(isset($_GET['delete'])){
