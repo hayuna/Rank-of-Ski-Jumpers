@@ -59,21 +59,28 @@ function add(){
 }	
 
 function show_details($id){
+	$query = mysql_query("SELECT * FROM jumpers WHERE id = ".$id);
+	while($r = mysql_fetch_assoc($query)){
+		$name = $r['name'];
+		$nationality = $r['nationality'];
+		$age = $r['age'];
+		$points = $r['points'];
+	}
 	echo '
 	<div class="details-body">
 		<div class="avatar" style="background: url(\'img/default.png\');height: 150px;float: left;width: 150px;"></div>
 		<div class="info">
 			<div class="details-margin">
-				xxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxx
+				'.$name.'
 			</div>
 			<div class="details-margin">
-				Nationality: xxxxxxxxx
+				Nationality: '.$nationality.'
 			</div>
 			<div class="details-margin">
-				Age: xx
+				Age: '.$age.'
 			</div>
 			<div class="details-margin">
-				Points: xxxx
+				Points: '.$points.'
 			</div>
 		</div>
 	</div>
@@ -87,11 +94,10 @@ function show(){
 		echo '
 		<div style="border:0;text-align: center;margin-top:166px;">No results</div>
 		';
-	}
-	else if($r[0] <= 10){
+	}elseif($r[0] <= 10){
 		$query = mysql_query("SELECT * FROM jumpers ORDER BY points DESC LIMIT 10");
 		echo '
-		<table class="jumpersTable">
+		<table style="overflow: scroll;" class="jumpersTable">
 			<tr>
 				<td>Position</td>
 				<td>Name</td>
@@ -124,7 +130,41 @@ function show(){
 		</table>
 		';
 	}else{
-		echo "more than 10";
+		$query = mysql_query("SELECT * FROM jumpers ORDER BY points DESC");
+		echo '
+		<div style="overflow-y: scroll;overflow-x: hidden;height:297px;border: 0;">
+		<table style="overflow: scroll;" class="jumpersTable">
+			<tr>
+				<td>Position</td>
+				<td>Name</td>
+				<td>Nationality</td>
+				<td>Age</td>
+				<td>Points</td>
+				<td>Action</td>
+			</tr>
+		';
+		$counter = 0;
+		while($r = mysql_fetch_assoc($query)){
+			$id = $r['id'];
+			$name = $r['name'];
+			$nationality = $r['nationality'];
+			$age = $r['age'];
+			$points = $r['points'];
+			$counter++;
+			echo '
+				<tr>
+					<td>'.$counter.'</td>
+					<td>'.$name.'</td>
+					<td>'.$nationality.'</td>
+					<td>'.$age.'</td>
+					<td>'.$points.'</td>
+					<td><a href="?modify&id='.$id.'">Modify</a> | <a href="?delete&id='.$id.'">Delete</a></td>
+				</tr>
+			';
+		}
+		echo '
+		</table></div>
+		';
 	}
 
 }

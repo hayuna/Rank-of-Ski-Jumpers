@@ -49,7 +49,7 @@
 		});
 		$("td").not(':eq(5)').click(function() {
 			var id = $(this).parent("tr");
-			id = s.find("td:eq(5)").html();
+			id = id.find("td:eq(5)").html();
 			id = id.replace('<a href="?modify&amp;id=', '');
 			id = id.replace('">Modify</a> | <a href="?delete&amp;id=', '');
 			id = id.replace('">Delete</a>', '');
