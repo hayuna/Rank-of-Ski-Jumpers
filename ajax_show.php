@@ -58,7 +58,7 @@ function show($ajaxQuery){
 			echo '
 				<tr>
 					<td>'.$counter.'</td>
-					<td>'.$name.'</td>
+					<td><a href="?details&id='.$id.'">'.$name.'</a></td>
 					<td>'.$nationality.'</td>
 					<td>'.$age.'</td>
 					<td>'.$points.'</td>
