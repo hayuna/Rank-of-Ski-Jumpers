@@ -1,7 +1,7 @@
 	div{border:1px solid black;}
 	#container, #header, #footer{width:1338px;}
 	#left, #content{float:left;height:330px;}
-	#header{height:50px;}
+	#header{height:50px; background: -moz-linear-gradient(#0000ff, #22ccff, #22ccff);}
 	#left{width:312px;}
 	#content{width:1020px;}
 	#footer{clear:both;height:50px;}
