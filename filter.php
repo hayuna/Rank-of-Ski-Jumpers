@@ -1,10 +1,10 @@
 <br>
 <div class="filter">filter results</div><hr>
 <div class="input-margin">
-	<input type="text" class="name filterName"> Name<br>
+	<input type="text" class="name filterName" style="width:163px;"> Name<br>
 </div>
 <div class="input-margin">
-	<input type="text" class="nationality filterNationality"> Nationality<br>
+	<input type="text" class="nationality filterNationality" style="width:163px;"> Nationality<br>
 </div>
 <div class="input-margin">
 	<input type="text" class="ageFrom filterAgeFrom"> - <input type="text" class="AgeTo filterAgeTo"> Age (from - to)<br>

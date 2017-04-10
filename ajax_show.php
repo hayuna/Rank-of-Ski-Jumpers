@@ -62,7 +62,7 @@ function show($ajaxQuery){
 					<td>'.$nationality.'</td>
 					<td>'.$age.'</td>
 					<td>'.$points.'</td>
-					<td><a href="?modify&id='.$id.'">Modify</a> | <a href="?delete&id='.$id.'">Delete</a></td>
+					<td><a class="linkButton" href="?modify&id='.$id.'">Modify</a> | <a  class="linkButton" href="?delete&id='.$id.'">Delete</a></td>
 				</tr>
 			';
 		}

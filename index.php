@@ -10,19 +10,22 @@
 			var nationality = $('.modifyInput > div > input.nationality').val();
 			var age = $('.modifyInput > div > input.modifyAge').val();
 			var points = $('.modifyInput > div > input.modifyPoints').val();
+			var image = $('.modifyInput > div > input.modifyImage').val();
 			$.ajax({
 				method: "POST",
 				url: "ajax_modify.php",
-				data: { 
+				data: {
 					id: id,
-					name: name, 
+					name: name,
 					nationality: nationality,
 					age: age,
-					points: points
+					points: points,
+					image: image
 				}
 			})
 			.done(function( msg ) {
 				location.replace("index.php");
+				console.log(msg);
 			});
 		});
 		$('.add_jumper_submit').click(function(){
@@ -30,18 +33,21 @@
 			var nationality = $('.addInput > div > input.nationality').val();
 			var age = $('.addInput > div > input.addAge').val();
 			var points = $('.addInput > div > input.addPoints').val();
+			var image = $('.addInput > div > input.addImage').val();
 			$.ajax({
 				method: "POST",
 				url: "ajax_add.php",
-				data: { 
-					name: name, 
+				data: {
+					name: name,
 					nationality: nationality,
 					age: age,
-					points: points
+					points: points,
+					image: image
 				}
 			})
 			.done(function( msg ) {
 				location.replace("index.php");
+				console.log(msg);
 			});
 		});
 		$('.addButton').click(function(){

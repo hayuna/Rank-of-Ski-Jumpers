@@ -1,11 +1,15 @@
 	div{border:1px solid black;}
+	body{background: url('../img/wall2.png');}
 	#container, #header, #footer{width:1338px;}
-	#left, #content{float:left;height:330px;}
+	#left, #content{float:left;height:300px;border-bottom: none;}
 	#header{height:50px; background: -moz-linear-gradient(#0000ff, #22ccff, #22ccff);}
 	#left{width:312px;}
 	#content{width:1020px;}
-	#footer{clear:both;height:50px;}
+	#footer{clear:both;height:50px;font-family: 'YourInvited';position: fixed;border: none;bottom:10px;right:10px;}
 	.back, .logo{width: 120px;height: 38px;margin-top: 5px;margin-left: 5px;}
+	.back, .title{border:none;}
+	.addButton{border-radius: 20px;}
+	.linkButton{font: bold 11px Arial;text-decoration: none;background-color: #EEEEEE;color: #333333;padding: 2px 6px 0px 6px;border-top: 1px solid #CCCCCC;border-right: 1px solid #333333;border-bottom: 1px solid #333333;border-left: 1px solid #CCCCCC;}
 	.title{width: 400px;height: 38px;position: relative;top: -40px;left: 30%;}
 	.title span{text-align: center;position: relative;top: 30%;left: 20%;}
 	#left {text-align: left;}
@@ -16,9 +20,12 @@
 	table tr td:nth-child(2) {width:320px;}
 	table tr td:nth-child(3) {width:254px;}
 	table tr td:nth-child(4) {width:110px;}
+	tr:first-child{background: #c6c6f7 !important;}
+	table tr:nth-child(even) {background: #ddF7EE;}
+	table tr:nth-child(odd) {background: #eeeeff;}
 	table{margin:20px;}
 	.filter{text-align: center;}
-	.input-margin{margin-top:20px;}
+	.input-margin{margin-top:14px;}
 	.details-margin{margin-top: 19px;border: 0;}
 	.details-body{width:500px;margin-left: 255px;margin-top: 70px;padding: 10px;}
 	.info{margin-left: 160px;border: 0;}
@@ -73,6 +80,6 @@
 		padding: 10px;
 		width: 300px;
 	}
-	.addAge, .modifyAge, .addPoints, .modifyPoints{
+	.addAge, .modifyAge, .addPoints, .modifyPoints, .addImage, .modifyImage{
 		width:166px;
 	}
