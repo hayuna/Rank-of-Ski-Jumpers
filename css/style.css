@@ -1,7 +1,7 @@
 	div{border:1px solid black;}
 	body{background: url('../img/wall2.png');}
 	#container, #header, #footer{width:1338px;}
-	#left, #content{float:left;height:300px;border-bottom: none;}
+	#left, #content{float:left;height:300px;}
 	#header{height:50px; background: -moz-linear-gradient(#0000ff, #22ccff, #22ccff);}
 	#left{width:312px;}
 	#content{width:1020px;}
@@ -10,8 +10,8 @@
 	.back, .title{border:none;}
 	.addButton{border-radius: 20px;}
 	.linkButton{font: bold 11px Arial;text-decoration: none;background-color: #EEEEEE;color: #333333;padding: 2px 6px 0px 6px;border-top: 1px solid #CCCCCC;border-right: 1px solid #333333;border-bottom: 1px solid #333333;border-left: 1px solid #CCCCCC;}
-	.title{width: 400px;height: 38px;position: relative;top: -40px;left: 30%;}
-	.title span{text-align: center;position: relative;top: 30%;left: 20%;}
+	.title{width: 400px;height: 38px;position: relative;top: -40px;left: 40%;}
+	.title span{text-align: center;position: relative;font-size: 200%;font-style: italic;}
 	#left {text-align: left;}
 	#footer span{float: right;padding-right: 20px;padding-top: 30px;}
 	.AgeFrom, .AgeTo, .PointsFrom, .PointsTo {width:75px;}

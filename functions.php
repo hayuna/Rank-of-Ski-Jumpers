@@ -14,26 +14,29 @@ function modify($id){
 		$image = $r['img'];
 	}
 	echo '
-	<div class="modifyInput">
-		<div class="input-margin">
-			<input class="hideid" type="hidden" value="'.$id.'">
-			<input class="name" style="width:166px;" value="'.$name.'"> Name<br>
-		</div>
-		<div class="input-margin">
-			<input class="nationality" style="width:166px;" value="'.$nationality.'"> Nationality<br>
-		</div>
-		<div class="input-margin">
-			<input type="number" class="modifyAge" value="'.$age.'"> Age<br>
-		</div>
-		<div class="input-margin">
-			<input type="number" class="modifyPoints" value="'.$points.'"> Points<br>
-		</div>
-		<div class="input-margin">
-			<input class="modifyImage" type="text" value="'.$image.'"> Link to new image<br>
-		</div>
-		<div class="input-margin" style="border:none;">
-			<button class="modify_jumper_submit" style="width:100%;border-radius:20px;">Modify jumper</button>
-		</div>
+	<div class="info">
+		<div class="avatar" style="background: url(\''.$image.'\');background-size: 250px 250px;background-repeat: no-repeat;height: 250px;float: left;width: 250px;"></div>
+			<div class="modifyInput">
+				<div class="input-margin">
+					<input class="hideid" type="hidden" value="'.$id.'">
+					<input class="name" style="width:166px;" value="'.$name.'"> Name<br>
+				</div>
+				<div class="input-margin">
+					<input class="nationality" style="width:166px;" value="'.$nationality.'"> Nationality<br>
+				</div>
+				<div class="input-margin">
+					<input type="number" class="modifyAge" value="'.$age.'"> Age<br>
+				</div>
+				<div class="input-margin">
+					<input type="number" class="modifyPoints" value="'.$points.'"> Points<br>
+				</div>
+				<div class="input-margin">
+					<input class="modifyImage" type="text" value="'.$image.'"> Link to new image<br>
+				</div>
+				<div class="input-margin" style="border:none;">
+					<button class="modify_jumper_submit" style="width:100%;border-radius:20px;">Modify jumper</button>
+				</div>
+			</div>
 	</div>
 	';
 }
@@ -78,17 +81,18 @@ function show_details($id){
 	<div class="details-body">
 		<div class="avatar" style="background: url(\''.$img.'\');background-size: 152px 152px;background-repeat: no-repeat;height: 150px;float: left;width: 150px;"></div>
 		<div class="info">
-			<div class="details-margin">
-				'.$name.'
-			</div>
-			<div class="details-margin">
-				Nationality: '.$nationality.'
-			</div>
-			<div class="details-margin">
-				Age: '.$age.'
-			</div>
-			<div class="details-margin">
-				Points: '.$points.'
+				<div class="details-margin">
+					'.$name.'
+				</div>
+				<div class="details-margin">
+					Nationality: '.$nationality.'
+				</div>
+				<div class="details-margin">
+					Age: '.$age.'
+				</div>
+				<div class="details-margin">
+					Points: '.$points.'
+				</div>
 			</div>
 		</div>
 	</div>
